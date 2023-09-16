@@ -1,0 +1,101 @@
+@startuml
+
+class Being
+
+class Creature {
+
+    int health
+    int attack
+    int defense
+
+    attack()
+    receiveAttack()
+    isDead()
+    move()
+}
+
+class SmartCreature{
+	
+	String[] memory
+	int memoryOffset
+	
+	speakTo()
+	shout()
+	listen()
+}
+
+class Combustibles{
+	
+	boolean ifBurn
+	
+	burn()
+	extinguish()
+}
+
+class FireBaby{
+	
+	int magic
+
+	spurtFire()
+	setFire()
+}
+
+class WaterBaby{
+	
+	int magic
+	
+	sprayWater()
+	summonLight()
+	stopRain()
+}
+
+class Fly{	
+}
+
+class Snake{
+}
+
+class Spider{
+}
+
+class SpiderWeb{
+}
+
+class Tree{
+}
+
+class Sky{
+
+	boolean hasDarkClouds
+	boolean hasThunder;
+	boolean isRainy;
+	
+	setDarkClouds()
+	setThouder()
+	stopRain()
+	rainy()
+}
+
+Sky --|> Being
+
+Combustibles --|> Being
+
+Tree --|> Combustibles
+
+SpiderWeb --|> Combustibles
+
+Creature --|> Being
+
+Snake --|> Creature
+
+Spider --|> Creature
+
+Fly --|> Creature
+
+SmartCreature --|> Creature
+
+FireBaby --|> SmartCreature
+
+WaterBaby --|> SmartCreature
+
+@enduml

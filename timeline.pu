@@ -1,0 +1,90 @@
+' https://www.bilibili.com/video/BV1zQ4y1d7dQ?p=7
+' 5:20 ~ 6:20
+
+@startuml
+
+actor       水娃    as WaterBaby#Blue
+actor       火娃    as FireBaby#Red
+actor       苍蝇    as Fly#Orange
+actor       蛇      as Snake#Purple
+actor       蜘蛛    as Spider#Yellow
+entity      蛛网  as SpiderWeb#White
+entity      树      as Tree#Green
+entity      天空    as Sky#Grey
+
+WaterBaby -[#Grey]> FireBaby : 告诉
+note right
+    这方圆几十里，光秃秃的一片，到哪儿去找草药呀？
+end note
+
+FireBaby -[#Grey]> WaterBaby : 告诉
+note left
+    我们来想想办法！
+end note
+
+Fly -[#Orange]> Fly : 苍蝇飞舞
+
+Snake -[#Purple]> Snake : 蛇群盘绕
+
+FireBaby -[#Red]> FireBaby : 大喊
+note left
+    我要把这些害人虫化为灰烬！！！
+end note
+
+FireBaby -[#Red]> Snake : 攻击，造成伤害
+note left: 喷火
+
+Snake -[#White]> Snake : 死亡
+
+FireBaby -[#Red]> Fly : 攻击，造成伤害
+note left: 喷火
+
+Fly -[#White]> Fly: 死亡
+
+FireBaby -[#Red]> Spider : 攻击，造成伤害
+note left: 喷火
+
+Spider -[#White]> Spider: 死亡
+
+FireBaby -[#Red]> Tree : 点燃
+note left: 喷火
+note right: 着火
+
+FireBaby -[#Red]> SpiderWeb : 点燃
+note left: 喷火
+note right: 着火
+
+WaterBaby -[#Grey]> FireBaby : 告诉
+note right
+    哥哥，你停一停，看我的！
+end note
+
+WaterBaby -[#Blue]> WaterBaby : 移动
+note left
+    跳到石头上
+end note
+
+WaterBaby -[#Blue]> WaterBaby : 大喊
+note left
+    我要让春雨降临，大地苏醒！
+end note
+
+WaterBaby -[#Blue]> Sky : 生成乌云
+note left: 喷水
+note right: 出现乌云
+
+WaterBaby -[#Blue]> Sky : 生成雷电
+note left: 放电
+note right: 出现闪电
+
+Sky -[#Grey]> Sky : 下雨
+
+Tree -[#Blue]> Tree : 火熄灭
+
+SpiderWeb -[#Blue]> SpiderWeb : 火熄灭
+
+WaterBaby -[#Blue]> Sky : 使雨停
+note left: 停止施法
+note right: 天气放晴
+
+@enduml
