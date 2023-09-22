@@ -85,6 +85,6 @@ note right : Gourd1与Gourd3交换位置
 Geezer -[#Grey]> Line : 执行排序方案
 note right : Gourd1与Gourd2交换位置
 
-Line -[#Grey]> Geezer : 执排序完成
+Line -[#Grey]> Geezer : 排序完成
 note left : 返回log信息
 @enduml
