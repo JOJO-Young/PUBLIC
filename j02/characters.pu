@@ -1,0 +1,90 @@
+@startuml
+class Line{
+
+    -Position[] positions
+
+    +Line(int length)
+    +void put(Linable linable, int i)
+    +Linable get(int i)
+    +Linable[] toArray()
+
+    +String toString()
+}
+
+Class Position{
+
+    -Linable linable
+
+    +Position(Linable linable)
+    +void setLinable(Linable linable)
+}
+
+Interface Linable{
+    
+    +void setPosition()
+    +Position getPosition()
+    +int getValue()
+}
+
+Interface Sorter{
+    
+    +void load(int[] elements)
+    +void sort()
+    +String getPlan()
+}
+Enum Gourd{
+
+    ONE
+    TWO
+    THREE
+    FOUR
+    FIVE
+    SIX
+    SEVEN
+    -int r
+    -int g
+    -int b
+    -Position position
+
+    +Gourd(int r, int g, int b)
+    +Gourd getGourdByRank(int rank)
+    +int rank()
+    +void swapPosition(Gourd another)
+
+    +String toString()
+}
+
+Class BubbleSorter{
+
+    -int[] a
+    -String plan
+
+    -void swap(int i, int j)
+}
+
+Class Geezer{
+
+    -Geezer theGeezer
+    -Sorter sorter
+    
+    +Geezer getTheGeezer()
+    +void setSorter(Sorter sorter)
+    +String lineUp(Line line)
+    -String[] parsePlan(String plan)
+    -void execute(String step)
+}
+
+Class Scene{
+    Line line
+    Geezer theGeezer
+}
+
+Scene *-- Line : 组合
+Scene *-- Geezer : 组合
+Geezer ..> Line : dependence
+Line --+ Position: inner class
+Gourd ..|> Linable : implements
+BubbleSorter ..|> Sorter : implements
+Position o-- Linable : has-a
+Geezer o-- Sorter : has-a
+@enduml

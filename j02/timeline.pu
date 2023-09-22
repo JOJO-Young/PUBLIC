@@ -1,0 +1,90 @@
+@startuml
+actor 老人 as Geezer#Grey
+
+entity 队伍 as Line#Black
+
+Line -[#Black]> Line : 初始化
+note right: 初始化队伍长度为7
+
+Line -[#Red]> Line : put
+note right: 加入Gourd1于位置6
+
+Line -[#Orange]> Line : put
+note right: 加入Gourd2于位置3
+
+Line -[#Yellow]> Line : put
+note right: 加入Gourd3于位置1
+
+Line -[#Green]> Line : put
+note right: 加入Gourd4于位置5
+
+Line -[#Cyan]> Line : put
+note right: 加入Gourd5于位置2
+
+Line -[#Blue]> Line : put
+note right: 加入Gourd6于位置4
+
+Line -[#Purple]> Line : put
+note right: 加入Gourd7于位置0
+
+Geezer -[#Grey]> Geezer : setSorter
+note left: 老人确定排序策略
+
+Geezer -[#Grey]> Line : LineUp
+note left
+    开始排序
+end note
+
+Line -[#Black]> Geezer : load ranks
+note right
+    传递队列信息
+end note
+
+Geezer -[#Grey]> Geezer : sort
+note left : 依据rank进行排序，获得排序方案
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd3与Gourd7交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd5与Gourd7交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd2与Gourd7交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd6与Gourd7交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd4与Gourd7交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd1与Gourd7交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd4与Gourd6交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd1与Gourd6交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd2与Gourd3交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd4与Gourd5交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd1与Gourd5交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd1与Gourd4交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd1与Gourd3交换位置
+
+Geezer -[#Grey]> Line : 执行排序方案
+note right : Gourd1与Gourd2交换位置
+
+Line -[#Grey]> Geezer : 执排序完成
+note left : 返回log信息
+@enduml
