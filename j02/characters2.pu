@@ -78,7 +78,7 @@ Class SnakeSpirit{
 
 Class Scene{
     Line line
-    Geezer theGeezer
+    SnakeSpirit theSnakeSpirit
 }
 
 Scene *-- Line : 组合
