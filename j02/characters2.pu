@@ -1,0 +1,93 @@
+@startuml
+class Line{
+
+    -Position[] positions
+
+    +Line(int length)
+    +void put(Linable linable, int i)
+    +Linable get(int i)
+    +Linable[] toArray()
+
+    +String toString()
+}
+
+Class Position{
+
+    -Linable linable
+
+    +Position(Linable linable)
+    +void setLinable(Linable linable)
+}
+
+Interface Linable{
+    
+    +void setPosition()
+    +Position getPosition()
+    +int getValue()
+}
+
+Interface Sorter{
+    
+    +void load(int[] elements)
+    +void sort()
+    +String getPlan()
+}
+Class SmallDevil{
+
+    -int r
+    -int g
+    -int b
+    -Position position
+    +HashMap<Integer, SmallDevil> hashMap
+
+    +SmallDevil(int r, int g, int b)
+    +int rank()
+    +void swapPosition(SmallDevil another)
+
+    +String toString()
+}
+
+Class BubbleSorter{
+
+    -int[] a
+    -String plan
+
+    -void swap(int i, int j)
+}
+
+Class QuickSorter{
+    -int[] a
+    -String plan
+    
+    -void swap(int i, int j)
+    -int partition(int left, int right)
+    -void quickSorter(int left, int right)
+}
+ 
+Class SnakeSpirit{
+
+    -SnakeSpirit theSnakeSpirit
+    -Sorter sorter
+    
+    +SnakeSpirit getTheSnakeSpirit()
+    +void setSorter(Sorter sorter)
+    +String lineUp(Line line)
+    -String[] parsePlan(String plan)
+    -void execute(String step)
+}
+
+Class Scene{
+    Line line
+    Geezer theGeezer
+}
+
+Scene *-- Line : 组合
+Scene *-- SnakeSpirit : 组合
+SnakeSpirit ..> Line : dependence
+Line --+ Position: inner class
+SmallDevil ..|> Linable : implements
+BubbleSorter ..|> Sorter : implements
+QuickSorter ..|> Sorter : implements
+Position o-- Linable : has-a
+SnakeSpirit o-- Sorter : has-a
+@enduml
