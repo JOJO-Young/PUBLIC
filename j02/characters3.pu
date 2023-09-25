@@ -77,11 +77,18 @@ Class SnakeSpirit{
 }
 
 Class Scene{
-    Line line
+    Square square 
     SnakeSpirit theSnakeSpirit
 }
 
-Scene *-- Line : 组合
+Class Square{
+
+    private int maxCol;
+
+    public Square(int row, int col)
+}
+Square --|> Line : extend
+Scene *-- Square : 组合
 Scene *-- SnakeSpirit : 组合
 SnakeSpirit ..> Line : dependence
 Line --+ Position: inner class
