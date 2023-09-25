@@ -60,7 +60,6 @@ Class QuickSorter{
     -String plan
     
     -void swap(int i, int j)
-    -int partition(int left, int right)
     -void quickSorter(int left, int right)
 }
  

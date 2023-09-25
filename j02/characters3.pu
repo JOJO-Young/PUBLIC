@@ -56,11 +56,11 @@ Class BubbleSorter{
 }
 
 Class QuickSorter{
+
     -int[] a
     -String plan
     
     -void swap(int i, int j)
-    -int partition(int left, int right)
     -void quickSorter(int left, int right)
 }
  
@@ -77,15 +77,20 @@ Class SnakeSpirit{
 }
 
 Class Scene{
+
     Square square 
     SnakeSpirit theSnakeSpirit
 }
 
 Class Square{
 
-    private int maxCol;
+    -int maxCol;
 
-    public Square(int row, int col)
+    +Square(int row, int col)
+    +put(Linable linable, int row, int col)
+    +get(int row, int col)
+
+    +String toString()
 }
 Square --|> Line : extend
 Scene *-- Square : 组合
