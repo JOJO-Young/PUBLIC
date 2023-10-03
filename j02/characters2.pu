@@ -62,6 +62,13 @@ Class QuickSorter{
     -void swap(int i, int j)
     -void quickSorter(int left, int right)
 }
+
+Class InsertSorter{
+    -int[] a
+    -String plan
+
+    -void swap(int i, int j)
+}
  
 Class SnakeSpirit{
 
@@ -87,6 +94,7 @@ Line --+ Position: inner class
 SmallDevil ..|> Linable : implements
 BubbleSorter ..|> Sorter : implements
 QuickSorter ..|> Sorter : implements
+InsertSorter ..|> Sorter : implements
 Position o-- Linable : has-a
 SnakeSpirit o-- Sorter : has-a
 @enduml
