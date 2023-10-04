@@ -100,7 +100,7 @@ Class Scene{
 
 Class Square{
 
-    -int maxCol;
+    +int maxCol;
 
     +Square(int row, int col)
     +put(Linable linable, int row, int col)
