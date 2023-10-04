@@ -70,7 +70,7 @@ Class InsertSorter{
     -void swap(int i, int j)
 }
 
-Class SlectionSorter{
+Class SelectionSorter{
     -int[] a
     -String plan
 
